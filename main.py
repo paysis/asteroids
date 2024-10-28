@@ -42,6 +42,11 @@ def main():
             if a.overlaps(player):
                 print("Game over!")
                 sys.exit()
+            
+            for s in shots:
+                if a.overlaps(s):
+                    s.kill()
+                    a.split()
 
         # render
         screen.fill((0,0,0))
